@@ -22,4 +22,12 @@ body {
 
 ul { list-style: square; }
 
+table, th, tr, td  {
+    font-size: 15px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 30px;
+}
+
+
 
