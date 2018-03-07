@@ -30,4 +30,23 @@ table, th, tr, td  {
 }
 
 
+a:link {
+    color:red;
+}
+
+
+a:visited {
+    color:maroon;
+}
+
+
+a:hover {
+    color:blue;
+}
+
+/
+a:active {
+    color:green;
+}
+
 
