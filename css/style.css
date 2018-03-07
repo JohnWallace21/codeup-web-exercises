@@ -3,8 +3,11 @@
     color: darkslategrey;
     text-decoration: underline;
 }
+header{
+    background-color: lightsteelblue;.
+}
 
-h1 {
+#top{
     text-align: center;
 }
 
@@ -22,11 +25,15 @@ body {
 
 ul { list-style: square; }
 
-table, th, tr, td  {
+table, tr, td, th  {
     font-size: 15px;
-    border: 1px solid black;
+    border: 2px solid black;
     border-collapse: collapse;
     padding: 30px;
+}
+
+th{
+    background-color: aqua;
 }
 
 
