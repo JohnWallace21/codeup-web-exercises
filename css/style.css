@@ -1,9 +1,18 @@
 
 .fancy-header {
-    color: purple;
+    color: darkslategrey;
     text-decoration: underline;
 }
 
 h1 {
     text-align: center;
+}
+
+h2 {
+    color:cadetblue;
+    text-decoration: underline;
+}
+
+body {
+    background-color: lightgrey;
 }
