@@ -1,8 +1,13 @@
-
+body{
+    text-align: center;
+}
 .fancy-header {
     color: darkslategrey;
     text-decoration: underline;
 }
+
+
+
 header{
     background-color: lightsteelblue;.
 }
@@ -23,7 +28,16 @@ body {
 
 }
 
-ul { list-style: square; }
+ul {
+    list-style: square;
+    align-content: center;
+}
+
+li {
+    display: inline;
+    padding: 0px;
+    margin: 0px;
+}
 
 table, tr, td, th  {
     font-size: 15px;
