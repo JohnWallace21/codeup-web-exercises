@@ -1,0 +1,38 @@
+
+
+
+#logo{
+    color: darkblue;
+}
+
+.menu{
+    background-color: aliceblue;
+    list-style: none;
+    float: left;
+    width: 200px;
+    height: 100%;
+    margin-top: 0px;
+    position: relative;
+    margin-bottom: 0px;
+
+}
+
+
+.par{
+    background-color: green;
+    height: 100%;
+    width: 300px;
+    float: left;
+    margin-top: 0px;
+    position: relative;
+    margin-bottom: 0px;
+
+}
+
+
+
+
+
+
+
+

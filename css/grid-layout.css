@@ -5,9 +5,8 @@
 }
  .row{
      width: 100%;
-     border: 1px solid black;
+     /*border: 1px solid black;*/
      margin: 10px;
-     background-color: lightgrey;
      float: left;
 
  }
@@ -16,9 +15,10 @@
 
 
 
+
  .column{
-     border: 1px solid black;
      box-sizing: border-box;
+     /*border: 1px solid black;*/
      float: left;
 
  }
@@ -26,22 +26,18 @@
 
  .one-half{
      width: 50%;
-     background-color: lightblue;
  }
 
  .one-third{
      width: 33.3%;
-     background-color: darkseagreen;
  }
 
  .one-fourth{
      width: 25%;
-     background-color: blue;
  }
 
  .one-sixth{
      width: 16.66%;
-     background-color: palegreen;
 
  }
 
@@ -49,8 +45,14 @@
 
  .one-eighth{
      width: 12.5%;
-     background-color: maroon;
  }
+
+ .offset-one-half{
+     margin: 500px;
+ }
+
+
+
 
 
 
