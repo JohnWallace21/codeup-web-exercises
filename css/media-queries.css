@@ -1,0 +1,52 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 10px;
+}
+
+
+.alert-info{
+    text-align: center;
+    border: 2px solid #d3d3d3;
+    background-color: #add8e6;
+    padding: 1em;
+}
+.alert-info > a {
+    color: #000;
+    text-decoration: none;
+}
+h1{
+    text-align: center;
+
+}
+
+.nav-links{
+    padding-left: 0;
+    text-align: center;
+
+}
+.nav links li {
+    border: 2px solid black;
+    padding: 1em;
+    text-align: center;
+    margin-bottom: .5em;
+    list-style-type: none;
+    width: 50%;
+
+}
+
+.sub-section{
+    font-style: italic;
+}
+
+
+
+
+
+
+
