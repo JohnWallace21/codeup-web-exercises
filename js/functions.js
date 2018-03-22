@@ -1,5 +1,6 @@
 "use strict";
 
+
 /**
  * Done:
  * Create a function called 'sayHello' that takes a parameter 'name'.
@@ -35,7 +36,7 @@ console.log(helloMessage);
 var myName = "John";
 
 sayHello(myName);
-console.log(sayHello);
+console.log(sayHello(myName));
 
 
 
@@ -61,11 +62,11 @@ var random = Math.floor((Math.random() * 3) + 1);
  * different result everytime you refresh the page if you are using the random
  * number)
  */
-function isTwo(random){
-    return (random === 2)
+function isTwo(n){
+    return (n === 2)
 }
 
-console.log(isTwo(random));
+console.log(isTwo(1));
 
 
 
@@ -135,6 +136,127 @@ function applyDiscount(price, discountPercent){
 }
 
 console.log(applyDiscount(45.99, 0.12));
+
+
+
+//extra function drills
+
+function identity(x){
+
+    return (x)
+
+}
+//----------------------
+function isOdd(theNumber){
+return    (theNumber % 2 ===1)
+}
+
+
+console.log(isOdd(5));
+
+//----------------------
+
+function isEven(theNumber){
+    return (theNumber % 2 === 0)
+}
+
+console.log(isEven(56));
+
+//--------------------------
+
+function isPositive(theNumber){
+    return (theNumber > 0)
+}
+
+console.log(isPositive(0));
+
+//---------------------------------
+
+function decrement(theNumber){
+    return (theNumber - 1)
+}
+
+console.log(decrement(3));
+
+//---------------------------------------
+
+function isFive(theNumber){
+    return(theNumber === 5)
+}
+
+console.log(isFive(5));
+
+//------------------------------------------
+
+function square(theNumber){
+    return(theNumber * theNumber)
+}
+
+
+console.log(square(2));
+//-------------------------------------------------
+
+function cube(theNumber){
+    return(theNumber * theNumber * theNumber)
+}
+
+console.log(cube(2));
+
+//------------------------------------------------
+
+function half(theNumber){
+    return(theNumber / 2)
+}
+
+console.log(half(6));
+
+//----------------------------------------------------
+
+function double(theNumber){
+    return(theNumber * 2)
+}
+
+
+console.log(double(50));
+
+
+
+//---------------------------------------------------------------
+
+function isRightTriangle(a, b, c){
+    return (a * a) + (b * b) === (c * c)
+}
+
+
+console.log(isRightTriangle(3, 4, 5));
+
+//-------------------------
+
+function hasSpaces(theString) {
+    return theString.indexOf(" ") !== -1
+}
+    console.log(hasSpaces(" rdscc "));
+
+
+//---------------------------------
+
+function isValidPassword(theString){
+    return theString.indexOf(" ")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
