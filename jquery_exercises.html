@@ -5,23 +5,50 @@
     <title>Jquery Overview</title>
 </head>
 <body>
+
+<h1 id="header">jQuery Selector Page</h1>
+<p class="words">jQuery makes selecting elements in the DOM very simple and has a powerful and optimized selector engine.
+    Though there are many types of selectors available through jQuery, we will be concentrating on the basic (and most commonly used) selectors:
+</p>
+    <br>
+
+    <h2>Selector Types</h2>
+
+    <ul>
+        <li class="codeup">ID Selector</li>
+        <li>Class Selector</li>
+        <li class="codeup">Element Selector</li>
+        <li>Multiple Selector</li>
+        <li class="codeup">All Selector</li>
+    </ul>
+    <hr>
+
+<div>
+    <p class="words">You might notice that jQuery selectors look very similar to css selectors. That's intentional! Part of the power of jQuery is that it allows us to write (almost all) css selectors in our javascript to manipulate the DOM.</p>
+
+</div>
+
+
+
+
     <script src="js/jquery-2.2.4.js"></script>
     <script>
 
     $(document).ready(function() {
         alert( 'The DOM has finished loading!' );
     });
+        $("li").css({
+            "font-size": "20px",
+             }
+        );
+        $("h1, p, li").css("background-color", "#cf0");
+        // $("p").css("background-color", "#4666ff");
 
+
+    // $(".codeup").css("border", "1px solid #f00");
+    // var welcome = $("#header").html();
+    // alert(welcome);
     </script>
-
-
-
-
-
-
-
-
-
 </body>
 
 </html>
