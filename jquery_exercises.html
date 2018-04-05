@@ -28,23 +28,37 @@
 
 </div>
 
-
-
-
-    <script src="js/jquery-2.2.4.js"></script>
+<script src="js/jquery-2.2.4.js"></script>
     <script>
 
-    $(document).ready(function() {
-        alert( 'The DOM has finished loading!' );
-    });
-        $("li").css({
-            "font-size": "20px",
-             }
-        );
-        $("h1, p, li").css("background-color", "#cf0");
+     $("h1").click(function(e){
+        $(this).css("background-color", "#4666ff")
+     });
+     $("p").dblclick(function(e){
+        $(this).css("font-size", "18px")
+     });
+     $("li").hover(function() {
+         $(this).css("color", "#212121")
+     },
+     function() {
+         $(this).css("color", "#f00");
+     }
+
+     );
+
+
+
+        // $("li").css({
+        //     "font-size": "20px",
+        //      }
+        // );
+        // $("h1, p, li").css("background-color", "#cf0");
+        //
+
+    // $(document).ready(function() {
+    //     alert( 'The DOM has finished loading!' );
+    // });
         // $("p").css("background-color", "#4666ff");
-
-
     // $(".codeup").css("border", "1px solid #f00");
     // var welcome = $("#header").html();
     // alert(welcome);
