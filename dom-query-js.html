@@ -37,24 +37,34 @@
 <button id="btn2">Hello Again Color</button>
 <button id="btn3">List colors</button>
 <button id="btn4">Mission Accomplished</button>
+
 <script>
     (function() {
         "use strict";
+        // TODO: Set inner html of mainHeader to "JavaScript is Cool"
         // TODO: Uncomment next line and get the main header element by id
+
         var mainHeader = document.getElementById("main-header");
 
-        // TODO: Set inner html of mainHeader to "JavaScript is Cool"
         var listener = function (event) {
-            mainHeader.innerHTML = "JavaScript is Cool";
+            if(mainHeader.innerText = "Hello World!") {
+                mainHeader.innerText = "JavaScript is Cool";
+            } else if (mainHeader.innerText = "JavaScript is Cool") {
+                mainHeader.innerText = "Hello World!";
+            }
+                
+            
         };
 
-        document.getElementById('btn1').addEventListener('click', listener, false);
-
+        document.getElementById('btn1').addEventListener('click',listener, false);
+//=====================================================================================
             // TODO: Set the text color of subHeader to blue
         // TODO: Uncomment the next line and get the sub header element by id
+        // TODO: Uncomment the next line and get all list items
+
+
         var subHeader = document.getElementById("sub-header");
 
-        // TODO: Uncomment the next line and get all list items
         var listItems = document.getElementsByTagName("li") ;
         var listener1 = function (event) {
             subHeader.style.color = "#00f";
@@ -74,21 +84,37 @@
         };
         document.getElementById('btn3').addEventListener('click', listener2, false);
 
-
+//=============================================================================================
 
         // TODO: Set text color on every other list item to grey
-
         // TODO: Set text color of li with dbid = 1 to blue
-
-
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        var subParagraphs =  document.getElementsByClassName("sub-paragraph")[0];
-var listener3 = function (event) {
-        subParagraphs.innerText = "Mission Accomplished!";
 
-        };
+        var subParagraphs =  document.getElementsByClassName("sub-paragraph")[0];
+
+
+    var listener3 = function (event) {
+                subParagraphs.innerText = "Mission Accomplished";
+
+
+
+    };
         document.getElementById('btn4').addEventListener('click', listener3, false);
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+//========================================================================================
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
     })();
 </script>

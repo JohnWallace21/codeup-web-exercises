@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>google maps api</title>
+    <style type="text/css">
+        #map-canvas {
+            width: 770px;
+            height: 481px;
+        }
+    </style>
+</head>
+<body>
+<!-- div to hold map -->
+<div id="map-canvas"></div>
+
+<!-- Load the Google Maps API [DON'T FORGET TO USE A KEY] -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjLw2PZfj1833bBl-MqzJWGdzpgVF7z9A"></script>
+
+<!-- Script to show address on map -->
+<script type="text/javascript">
+    (function() {
+        "use strict";
+
+        // Set our map options
+        var mapOptions = {
+            // Set the zoom level
+            zoom: 19,
+
+            // This sets the center of the map at our location
+            center: {
+                lat:  29.426791,
+                lng: -98.489602
+            }
+        };
+
+
+
+        var address = "2414 Chad Street, New Braunfels, TX 78130";
+        var geocoder = new google.maps.Geocoder();
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+          // geocode(request:GeocoderRequest, callback:function(Array.<GeocoderResult>, GeocoderStatus))
+
+        // Render the map
+
+        geocoder.geocode({ "address": address }, function(results, status) {
+
+            // Check for a successful result
+            if (status == google.maps.GeocoderStatus.OK) {
+
+                // Recenter the map over the address
+                map.setCenter(results[0].geometry.location);
+            } else {
+
+                // Show an error message with the status if our request fails
+                alert("Geocoding was not successful - STATUS: " + status);
+            }
+        });
+    })();
+
+
+</script>
+
+</body>
+</html>
