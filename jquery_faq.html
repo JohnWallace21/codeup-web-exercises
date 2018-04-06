@@ -3,19 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <title>jquery faq</title>
+    <style>
+        .invisible{
+            display: none;
+        }
+        .highlight{
+        background-color: #f3f315;
+        }
+    </style>
 </head>
 <body>
-<ul>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-</ul>
+<h1>Nation Park FAQ</h1>
+<dl>
+    <dt>How many national parks are there in the U.S.?</dt>
+    <dd class = "invisible"> 58</dd>
+    <dt>How many national parks are in Texas?</dt>
+    <dd class = "invisible"> 2</dd>
+    <dt>How man </dt>
+    <dd class = "invisible"> 3</dd>
+    <dt>How many national parks are in Louisiana?</dt>
+    <dd class = "invisible"> 8</dd>
+    <dt>How many national parks are in Arkansas? </dt>
+    <dd class = "invisible"> 1</dd>
+    <dt>How many national parks are in New Mexico?</dt>
+    <dd class = "invisible"> 1</dd>
+    <dt>How many national parks are in Alabama?</dt>
+    <dd class = "invisible"> 1 </dd>
+    <dt>How many national parks are in Alaska?</dt>
+    <dd class = "invisible"> 8</dd>
+    <dt>How many national parks are in Colorado?</dt>
+    <dd class = "invisible"> 4 </dd>
+    <dt>How many national parks are in Wyoming?</dt>
+    <dd class = "invisible"> 10</dd>
+</dl>
+<button type="button">Show me all the answers!</button>
+    <script src="js/jquery-2.2.4.js"></script>
+<script>
+    $("button").click(function(){
+        $("dd").toggleClass("invisible");
+    });
+    $("dt").click(function(){
+        $(this).toggleClass("highlight");
+        $(this).next().toggleClass("invisible");
+    });
+</script>
 </body>
 </html>
