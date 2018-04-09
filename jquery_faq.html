@@ -10,10 +10,16 @@
         .highlight{
         background-color: #f3f315;
         }
+        #no,#now{
+            color: red;
+
+        }
     </style>
 </head>
 <body>
-<h1>National Park FAQ</h1>
+<h4>National Park FAQ</h4>
+<div><h1>Would you like to sign up for our newsletter?<span id = "no"> x </span></h1></div>
+<div id = "h"><h2 id="now">Register for this site. NOW!</h2></div>
 <dl>
     <dt>How many national parks are there in the U.S.?</dt>
     <dd class = "invisible"> 58</dd>
@@ -37,8 +43,8 @@
     <dd class = "invisible"> 10</dd>
 </dl>
 <div class = "pic">
-<ul id = "ywnp">
 <h3>Yellowstone National Park</h3>
+<ul id = "ywnp">
     <li>It was established 3/1/1872</li>
     <li>It is the world's first national park</li>
     <li>It is 3,472 square miles </li>
@@ -46,8 +52,8 @@
 </ul>
 </div>
 <div class = "pic">
-<ul id ="ynp">
 <h3>Yosemite National Park</h3>
+<ul id ="ynp">
     <li>Located in California</li>
     <li>It is visited by over 3.5 million people per year</li>
     <li>There are Black Bears in the park</li>
@@ -55,8 +61,8 @@
 </ul>
 </div>
 <div class = "pic">
-<ul id = "gcnp">
 <h3>Grand Canyon National Park</h3>
+<ul id = "gcnp">
     <li>It is located in Arizona</li>
     <li>The Grand Canyon is 1 mile deep</li>
     <li>There are no dinosaur bones in the Grand Canyon</li>
@@ -77,13 +83,13 @@
         $(this).toggleClass("highlight");
         $(this).next().toggleClass("invisible");
     });
-    $("h3").click(function() {
-        $(this).parent().children().css('font-weight', 'bold');
-    });
+    // $("h3").click(function() {
+    //     $(this).parent().children().css('font-weight', 'bold');
+    // });
 
 
     $("li").click(function() {
-        $(this).parent().children().next().first().css('color', 'blue');
+        $(this).parent().children().first().css('color', 'blue');
     });
 
     $("#hbutton").click(function(){
@@ -92,7 +98,18 @@
     });
     });
 
-    $(".pic").css("border", "2px");
+    $("#no").click(function(){
+        $("h1").hide();
+    });
+$("ul").hide();
+
+    $("h3").click(function(){
+        $(this).next().slideToggle(1000);
+    });
+    $("h2").hide().fadeIn(10000);
+
+
+
 
 </script>
 </body>
