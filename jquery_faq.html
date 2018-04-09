@@ -13,13 +13,13 @@
     </style>
 </head>
 <body>
-<h1>Nation Park FAQ</h1>
+<h1>National Park FAQ</h1>
 <dl>
     <dt>How many national parks are there in the U.S.?</dt>
     <dd class = "invisible"> 58</dd>
     <dt>How many national parks are in Texas?</dt>
     <dd class = "invisible"> 2</dd>
-    <dt>How man </dt>
+    <dt>How many national parks are in Oklahoma?</dt>
     <dd class = "invisible"> 3</dd>
     <dt>How many national parks are in Louisiana?</dt>
     <dd class = "invisible"> 8</dd>
@@ -36,9 +36,40 @@
     <dt>How many national parks are in Wyoming?</dt>
     <dd class = "invisible"> 10</dd>
 </dl>
+<div class = "pic">
+<ul id = "ywnp">
+<h3>Yellowstone National Park</h3>
+    <li>It was established 3/1/1872</li>
+    <li>It is the world's first national park</li>
+    <li>It is 3,472 square miles </li>
+    <li>It is located in Wyoming, Montana and Idaho</li>
+</ul>
+</div>
+<div class = "pic">
+<ul id ="ynp">
+<h3>Yosemite National Park</h3>
+    <li>Located in California</li>
+    <li>It is visited by over 3.5 million people per year</li>
+    <li>There are Black Bears in the park</li>
+    <li>There are giant Sequoias</li>
+</ul>
+</div>
+<div class = "pic">
+<ul id = "gcnp">
+<h3>Grand Canyon National Park</h3>
+    <li>It is located in Arizona</li>
+    <li>The Grand Canyon is 1 mile deep</li>
+    <li>There are no dinosaur bones in the Grand Canyon</li>
+    <li>Fish are uncommon in the Grand Canyon</li>
+</ul>
+</div>
 <button type="button">Show me all the answers!</button>
+<button type="button" id="hbutton">Highlight the facts!</button>
     <script src="js/jquery-2.2.4.js"></script>
 <script>
+    $("h1").click(function() {
+        $(this).text("Thanks for clicking.")
+    });
     $("button").click(function(){
         $("dd").toggleClass("invisible");
     });
@@ -46,6 +77,24 @@
         $(this).toggleClass("highlight");
         $(this).next().toggleClass("invisible");
     });
+    $("h3").click(function() {
+        $(this).parent().children().css('font-weight', 'bold');
+    });
+
+
+    $("li").click(function() {
+        $(this).parent().children().next().first().css('color', 'blue');
+    });
+
+    $("#hbutton").click(function(){
+        $("ul").each(function(index, element){
+            $(element).children().last().css("background-color", "#f3f315");
+    });
+    });
+
+    $(".pic").css("border", "2px");
+
 </script>
 </body>
 </html>
+
