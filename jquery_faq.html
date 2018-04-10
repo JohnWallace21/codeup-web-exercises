@@ -106,8 +106,11 @@ $("ul").hide();
     $("h3").click(function(){
         $(this).next().slideToggle(1000);
     });
-    $("h2").hide().fadeIn(10000);
+    $("h2").hide();
 
+    setTimeout(function() {
+        $("h2").fadeIn(2000)
+    }, 8000);
 
 
 
