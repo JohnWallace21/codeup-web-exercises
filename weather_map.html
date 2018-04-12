@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Map Project</title>
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">-->
+    <style>
+        body{
+            background-color: #b4dbfa;
+        }
+
+        div{
+            border: 1px solid black;
+            float: left;
+            clear: right;
+            text-align: center;
+            background-color: #f2f2f2;
+        }
+        button{
+            clear: left;
+        }
+        #map-canvas {
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+<h1>Weather Application</h1>
+<h2 id ="city"></h2>
+<container id = "bx">
+<div  id = "day1"></div>
+<div id = "day2"></div>
+<div id = "day3"></div>
+</container>
+<br>
+<button type = "button">Change Location</button>
+<input type="number" placeholder="latitude" id = "lati" step = "any">
+<input type="number" placeholder="longitude" id ="long" step = "any" >
+<br>
+<div id="map-canvas"></div>
+
+<script src="js/jquery-2.2.4.js"></script>
+
+<script>
+
+
+ var request = $.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
+            APPID: "8f32c0149a278cdb5f995fbb3d98eba5",
+            lat: 29.423017,
+            lon: -98.48527,
+            units: "imperial",
+            cnt: 3
+        });
+
+        request.done(function (response) {
+            console.log(response);
+            console.log(response.list);
+        });
+        // request.done(function(data){
+        //     data.each(function(thing){
+        //         $("#wm").append("<h2>" + data.main.name + "</h2>"
+        //             );
+        //
+        //     });
+        // });
+        request.done(function (response) {
+            $("#city").append(response.city.name )
+        });
+
+        request.done(function (response) {
+            $("#day1").append("<h3>" + response.list[0].temp.min + "/" + response.list[0].temp.max + "°</h3>",
+                "<img src='http://openweathermap.org/img/w/" + [response.list[0].weather[0].icon] + ".png'>",
+                "<p>" + "Clouds: " + response.list[0].weather[0].description + "</p>",
+                "<p>" + "Humidity: " + response.list[0].humidity + "</p>",
+                "<p>" + "Wind: " + response.list[0].speed + "</p>",
+                "<p>" + "Pressure: " + response.list[0].pressure + "</p>"
+            );
+        });
+        request.done(function (response) {
+            $("#day2").append("<h3>" + response.list[1].temp.min + "/" + response.list[0].temp.max + "</h3>",
+                "<img src='http://openweathermap.org/img/w/" + [response.list[1].weather[0].icon] + ".png'>",
+                "<p>" + "Clouds: " + response.list[1].weather[0].description + "</p>",
+                "<p>" + "Humidity: " + response.list[1].humidity + "</p>",
+                "<p>" + "Wind: " + response.list[1].speed + "</p>",
+                "<p>" + "Pressure: " + response.list[1].pressure + "</p>"
+            );
+        });
+        request.done(function (response) {
+            $("#day3").append("<h3>" + response.list[2].temp.min + "/" + response.list[0].temp.max + "</h3>",
+                "<img src='http://openweathermap.org/img/w/" + [response.list[2].weather[0].icon] + ".png'>",
+                "<p>" + "Clouds: " + response.list[2].weather[0].description + "</p>",
+                "<p>" + "Humidity: " + response.list[2].humidity + "</p>",
+                "<p>" + "Wind: " + response.list[2].speed + "</p>",
+                "<p>" + "Pressure: " + response.list[2].pressure + "</p>"
+            );
+        });
+ $("button").click(function() {
+
+     $("#city").empty();
+      $("#day1").empty();
+      $("#day2").empty();
+      $("#day3").empty();
+
+      var latitiude = $("#lati").val();
+      var longitude = $("#long").val();
+
+     var request = $.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
+         APPID: "8f32c0149a278cdb5f995fbb3d98eba5",
+         lat: latitiude,
+         lon: longitude,
+         units: "imperial",
+         cnt: 3
+     });
+
+     request.done(function (response) {
+         console.log(response);
+         console.log(response.list);
+     });
+     // request.done(function(data){
+     //     data.each(function(thing){
+     //         $("#wm").append("<h2>" + data.main.name + "</h2>"
+     //             );
+     //
+     //     });
+     // });
+     request.done(function (response) {
+         $("#city").append( response.city.name )
+     });
+
+     request.done(function (response) {
+         $("#day1").append("<h3>" + response.list[0].temp.min + "/" + response.list[0].temp.max + "°</h3>",
+             "<img src='http://openweathermap.org/img/w/" + [response.list[0].weather[0].icon] + ".png'>",
+             "<p>" + "Clouds: " + response.list[0].weather[0].description + "</p>",
+             "<p>" + "Humidity: " + response.list[0].humidity + "</p>",
+             "<p>" + "Wind: " + response.list[0].speed + "</p>",
+             "<p>" + "Pressure: " + response.list[0].pressure + "</p>"
+         );
+     });
+     request.done(function (response) {
+         $("#day2").append("<h3>" + response.list[1].temp.min + "/" + response.list[0].temp.max + "</h3>",
+             "<img src='http://openweathermap.org/img/w/" + [response.list[1].weather[0].icon] + ".png'>",
+             "<p>" + "Clouds: " + response.list[1].weather[0].description + "</p>",
+             "<p>" + "Humidity: " + response.list[1].humidity + "</p>",
+             "<p>" + "Wind: " + response.list[1].speed + "</p>",
+             "<p>" + "Pressure: " + response.list[1].pressure + "</p>"
+         );
+     });
+     request.done(function (response) {
+         $("#day3").append("<h3>" + response.list[2].temp.min + "/" + response.list[0].temp.max + "</h3>",
+             "<img src='http://openweathermap.org/img/w/" + [response.list[2].weather[0].icon] + ".png'>",
+             "<p>" + "Clouds: " + response.list[2].weather[0].description + "</p>",
+             "<p>" + "Humidity: " + response.list[2].humidity + "</p>",
+             "<p>" + "Wind: " + response.list[2].speed + "</p>",
+             "<p>" + "Pressure: " + response.list[2].pressure + "</p>"
+         );
+     });
+ });
+
+
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjLw2PZfj1833bBl-MqzJWGdzpgVF7z9A"></script>
+
+<!-- Script to show address on map -->
+<script type="text/javascript">
+    (function() {
+        "use strict";
+
+        // Set our map options
+        var mapOptions = {
+            // Set the zoom level
+            zoom: 19,
+
+            This sets the center of the map at our location
+            center: {
+                lat:  29.426791,
+                lng: -98.489602
+            }
+        };
+
+
+
+        var address = "2414 Chad Street, New Braunfels, TX 78130";
+        var geocoder = new google.maps.Geocoder();
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+        // geocode(request:GeocoderRequest, callback:function(Array.<GeocoderResult>, GeocoderStatus))
+
+
+        geocoder.geocode({ "address": address }, function(results, status) {
+
+            // Check for a successful result
+            if (status == google.maps.GeocoderStatus.OK) {
+
+                // Recenter the map over the address
+                map.setCenter(results[0].geometry.location);
+            } else {
+
+                // Show an error message with the status if our request fails
+                alert("Geocoding was not successful - STATUS: " + status);
+            }
+        });
+    })();
+
+
+</script>
+
+        </body>
+
+    </html>
