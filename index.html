@@ -3,72 +3,109 @@
 <head>
     <meta charset="utf-8">
     <title>Simple Simon</title>
-    <style>
-
-        .container{
-            width: 300px;
-            position: absolute;
-            top: 38vh;
-            left: 38vw;
-        }
-        #red {
-            background-color: lightcoral;
-            border:6px solid red ;
-            height:100px;
-            border-radius:300px 0 0 0;
-            -moz-border-radius: 300px 0 0 0 ;
-            -webkit-border-radius:  300px 0 0 0;
-            width:100px;
-            float: left;
-        } #blue {
-            background-color: dodgerblue;
-            border:6px solid  blue;
-            height:100px;
-            border-radius:0  300px 0 0;
-            -moz-border-radius: 0  300px  0 0;
-            -webkit-border-radius:0  300px  0 0;
-            width:100px;
-            float: left;
-        }#green {
-            background-color: lightgreen;
-            border:6px solid green;
-            height:100px;
-            border-radius:0  0 0 300px ;
-            -moz-border-radius: 0 0 0 300px ;
-            -webkit-border-radius: 0 0 0  300px;
-            width:100px;
-            float: left;
-        }#yellow {
-            background-color:orange;
-            border:6px solid yellow;
-            height:100px;
-            border-radius:0 0 300px 0 ;
-            -moz-border-radius:0 0  300px 0;
-            -webkit-border-radius: 0 0  300px 0;
-            width:100px;
-            float: left;
-        }
-        h1{
-            color: cadetblue;
-        }
-    </style>
+    <link rel="stylesheet" href="css/simple_simon.css">
 </head>
 
 <body>
 
-<h1>Simple Damn Simon</h1>
+<h1> Simple Simon</h1>
 <div class="container">
 
-           <div id = "red"></div>
-           <div id = "blue"></div>
-           <div id = "green"></div>
-           <div id = "yellow"></div>
+
+           <div class = "colors red" id = "red"></div>
+           <div class = "colors green" id = "blue"></div>
+
+           <div class = "colors green" id = "green"></div>
+           <div class = "colors blue" id = "yellow"></div>
+    <div id = "incirc">
+
+
     </div>
+    </div>
+
+
+<div class = "controls">
+    <button class ="buttons" style="button"> Start</button>
+    <button class ="buttons" style="button"> Reset</button>
+
+</div>
     <script src="js/jquery-2.2.4.js"></script>
 
 <script>
 
+    var playerSequence = [];
+    var gameSequence = [];
+    var id, color, level = 0;
 
+//1. start sequence
+$(document).ready(function(){
+    $(".colors").click(function(){
+        startGame();
+
+    })
+});
+
+
+function startGame(){
+
+}
+
+//2. use replicates sequence
+//3. if user does not replicate sequence then break
+//4.need a start button
+//5. need a reset button
+//6.
+    // $( "#red, #blue, #green, #yellow" ).click(function() {
+    //     $( this ).css("background-color", "#f3f315")
+    // });
+
+
+ $( "#red, #blue, #green, #yellow").click(function() {
+        $(this).animate({
+            opacity: 0.25,
+        }, 50, function() {
+            $(this).animate({
+                opacity: 1,
+            }), 300
+        });
+    });
+ //
+ //
+ // $( "#green" ).click(function() {
+ //        $( this ).animate({
+ //            opacity: 0.25,
+ //            left: "+=50",
+ //            height: "toggle
+ //        }, 1000, function() {
+ //            // Animation complete.
+ //        });
+ //    });
+ //
+ //
+ // $( "#yellow" ).click(function() {
+ //        $( this ).animate({
+ //            opacity: 0.25,
+ //            left: "+=50",
+ //            height: "toggle"
+ //        }, 1000, function() {
+ //            // Animation complete.
+ //        });
+ //    });
+
+
+
+
+/*
+    $("#red").click(function() {
+        $(this).toggleClass()
+    });
+    $("button").click(function(){
+        $("dd").toggleClass("invisible");
+    });
+    $("dt").click(function(){
+        $(this).toggleClass("highlight");
+        $(this).next().toggleClass("invisible");
+    });*/
 
 
 
