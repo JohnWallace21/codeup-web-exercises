@@ -25,7 +25,7 @@
 
 
 <div class = "controls">
-    <button class ="buttons" style="button"> Start</button>
+    <button class ="buttons" id ="start" style="button"> Start</button>
     <button class ="buttons" style="button"> Reset</button>
 
 </div>
@@ -33,13 +33,13 @@
 
 <script>
 
-    var playerSequence = [];
-    var gameSequence = [];
+    var playerSeq = [];
+    var gameSeq = [];
     var id, color, level = 0;
 
 //1. start sequence
 $(document).ready(function(){
-    $(".colors").click(function(){
+    $("#start").click(function(){
         startGame();
 
     })
@@ -47,6 +47,18 @@ $(document).ready(function(){
 
 
 function startGame(){
+    randomNum();
+    var i = 0;
+    var Int = setInterval();
+id = gameSeq[i];
+
+
+
+}
+
+function randomNum(){
+    var random = Math.floor(Math.random() * 4);
+    gameSeq.push(random);
 
 }
 

@@ -160,49 +160,69 @@
 
 
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjLw2PZfj1833bBl-MqzJWGdzpgVF7z9A"></script>
-
+<script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2l-5CY-2Ds6dIyc8doaPHImwacbive3A"></script>
+<script
 <!-- Script to show address on map -->
 <script type="text/javascript">
-    (function() {
-        "use strict";
 
-        // Set our map options
-        var mapOptions = {
-            // Set the zoom level
-            zoom: 19,
-
-            This sets the center of the map at our location
-            center: {
-                lat:  29.426791,
-                lng: -98.489602
-            }
-        };
-
-
-
-        var address = "2414 Chad Street, New Braunfels, TX 78130";
-        var geocoder = new google.maps.Geocoder();
-        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-
-        // geocode(request:GeocoderRequest, callback:function(Array.<GeocoderResult>, GeocoderStatus))
-
-
-        geocoder.geocode({ "address": address }, function(results, status) {
-
-            // Check for a successful result
-            if (status == google.maps.GeocoderStatus.OK) {
-
-                // Recenter the map over the address
-                map.setCenter(results[0].geometry.location);
-            } else {
-
-                // Show an error message with the status if our request fails
-                alert("Geocoding was not successful - STATUS: " + status);
-            }
+    var mapOptions = {
+        zoom: 19,
+        center: {
+            lat: 29.426791,
+            lng: -98.489602
+        },
+        mapTypeId: google.maps.MapTypeId.HYBRID
+    };
+    var mapCanvas = document.getElementById('map-canvas');
+    var map = new google.maps.Map(mapCanvas, mapOptions);
+    var geocoder = new google.maps.Geocoder();
+    /*var address = {
+        address: "300 Alamo Plaza, San Antonio, TX, 78205"
+    };*/
+    function callback(results, status, restaurant) {
+        if (status === google.maps.GeocoderStatus.OK) {
+            // Recenter the map over the address
+            // results[0].geometry.location will contain an object with lat and lng
+            // setter method
+            map.setCenter(results[0].geometry.location);
+            map.setMapTypeId(google.maps.MapTypeId.SATELLITE);
+            map.setZoom(10);
+            var marker = new google.maps.Marker({
+                position: results[0].geometry.location,
+                map: map,
+                icon: "imgs/codeup-arrow.png",
+                animation: google.maps.Animation.DROP,
+            });
+            var info = new google.maps.InfoWindow({
+                content: restaurant.info
+            });
+            info.open(map, marker);
+        } else {
+            // Show an error message with the status if our request fails
+            alert("Geocoding was not successful - STATUS: " + status);
+        }
+    }
+    var restaurants = [
+        {
+            address: "9921 Frontage Rd, San Antonio, TX 78230",
+            info: "Info 1"
+        },
+        {
+            address: "22410 US Hwy 281 N, San Antonio, TX 78259",
+            info: "Info 2"
+        },
+        {
+            address: "849 E Commerce St, San Antonio TX, 78205",
+            info: "Info 3"
+        }
+    ];
+    // setInterval, instead of foreach
+    restaurants.forEach(function (restaurant, index, array) {
+        geocoder.geocode({address: restaurant.address}, function (results, status) {
+            console.log(restaurant);
+            callback(results, status, restaurant);
         });
-    })();
-
+    });
 
 </script>
 
