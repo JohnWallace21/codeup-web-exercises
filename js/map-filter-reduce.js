@@ -48,8 +48,8 @@ console.log(emails);
 
 
 const arrayToObject = (array) =>
-    users.reduce((obj, item) => {
-        obj[item.id] = item
+    users.reduce((obj, user) => {
+        obj[user.id] = user;
         return obj
     }, {});
 
@@ -59,8 +59,7 @@ const arrayToObject = (array) =>
 //         return obj
 //     }, {});
 
-console.log(arrayToObject());
-
+console.log(arrayToObject);
 
 
 
