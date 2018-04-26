@@ -16,19 +16,43 @@
         "use strict";
 
 
-        var request = $.ajax("data/inventory.json");
 
-
-
-        request.done(function(data){
-            data.forEach(function(name){
-                $("#posts").innerHTML( name.title +
-                    + name.content +
-                    + name.categories +
-                    + name.date  );
-
+        var request = $.get('data/blog.json');
+        request.done(function (response /* array */) { // array | object
+            var $posts = $("#posts");
+            response.forEach(function (post) {
+                $posts.append("<article>" +
+                    "<h1>" + post.title + "</h1>" +
+                    "<p>" +
+                    "<small>" + post.date + "</small>" +
+                    "</p>" +
+                    "<p>" + post.content + "</p>" +
+                    "<ul>");
+                post.categories.forEach(function (category) {
+                    $posts.append("<li>"+ category +"</li>");
+                });
+                $posts.append(
+                    "</ul>" +
+                    "</article>");
             });
         });
+
+
+
+
+        // var request = $.ajax("data/inventory.json");
+        //
+        //
+        //
+        // request.done(function(data){
+        //     data.forEach(function(name){
+        //         $("#posts").innerHTML( name.title +
+        //             + name.content +
+        //             + name.categories +
+        //             + name.date  );
+        //
+        //     });
+        // });
 
 
 
